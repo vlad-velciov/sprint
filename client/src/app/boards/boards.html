@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container-fluid">
   These are boards right here
   <div>
     Create a new board
     <input ng-model="board_name" type="text"/>
-    <button ng-click="bds.add(board_name)" class="btn btn-primary">Add</button>
+    <button ng-click="bds.add(board_name)" class="btn btn-success">Add</button>
   </div>
 
   <div ng-repeat="board in boards" class="row">

@@ -11,6 +11,7 @@ import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service'
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 import { columnComponent } from '../app/components/column/column.component';
+import { taskComponent } from '../app/components/task/task.component';
 angular.module('sprint', [
   'ngAnimate',
   'ngCookies',
@@ -34,6 +35,7 @@ angular.module('sprint', [
   .controller('BoardsController', BoardsController)
   .controller('BoardController', BoardController)
   .component('columnComponent',  columnComponent)
+  .component('taskComponent',  taskComponent)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeMalarkey', MalarkeyDirective)
   .factory('Board', railsResourceFactory => {
@@ -46,6 +48,12 @@ angular.module('sprint', [
     return railsResourceFactory({
       url: '/api/columns',
       name: 'columns'
+    });
+  })
+  .factory('Task', railsResourceFactory => {
+    return railsResourceFactory({
+      url: '/api/tasks',
+      name: 'tasks'
     });
   })
 ;

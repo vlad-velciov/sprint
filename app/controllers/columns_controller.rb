@@ -7,6 +7,10 @@ class ColumnsController < ApplicationController
     Column.create column_params[:columns]
   end
 
+  def show
+    render json: ColumnDecorator.decorate(Column.find(params[:id]))
+  end
+
   def destroy
     Column.destroy(params[:id])
   end

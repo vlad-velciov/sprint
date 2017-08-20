@@ -1,9 +1,12 @@
 <div class="col-md-2 panel panel-default">
   <div class="panel-heading">
-    {{cl.model.name}}
+    <span>{{model.name}}</span>
+    <button class="btn btn-success" ng-click="cl.add_task()">Add a task</button>
   </div>
   <div class="panel-body">
-
+    <div ng-repeat="task in model.tasks">
+      <task-component model="task"></task-component>
+    </div>
   </div>
 
   <div class="panel-footer">

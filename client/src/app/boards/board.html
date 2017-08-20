@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    Board Name: {{board.name}}
+    <h2>{{board.name}}</h2>
   </div>
   <div class="row">
     <label>Add a column for this board</p></label>
     <input ng-model="column_name" type="text"/>
-    <button ng-click="bd.create_column()" class="btn btn-primary">Add</button>
+    <button ng-click="bd.create_column()" class="btn btn-success">Add</button>
   </div>
 
   <div class="row">
