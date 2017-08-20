@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    Board Name: {{board.name}}
+  </div>
+  <div class="row">
+    <label>Add a column for this board</p></label>
+    <input ng-model="column_name" type="text"/>
+    <button ng-click="bd.create_column()" class="btn btn-primary">Add</button>
+  </div>
+
+  <div class="row">
+    <span ng-repeat="column in board.columns">
+      <column-component model="column"></column-component>
+    </span>
+  </div>
+</div>

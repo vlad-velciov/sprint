@@ -9,6 +9,8 @@ gem 'listen'
 
 gem 'pg'
 
+gem 'draper'
+
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'

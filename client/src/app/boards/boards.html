@@ -1,0 +1,13 @@
+<div class="container">
+  These are boards right here
+  <div>
+    Create a new board
+    <input ng-model="board_name" type="text"/>
+    <button ng-click="bds.add(board_name)" class="btn btn-primary">Add</button>
+  </div>
+
+  <div ng-repeat="board in boards" class="row">
+    <a ng-href="#/boards/{{board.id}}" class="col-md-1">{{ board.name }} </a>
+    <button ng-click="bds.destroy(board)" class="btn btn-danger col-md-1">Remove</button>
+  </div>
+</div>

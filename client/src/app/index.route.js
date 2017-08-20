@@ -1,11 +1,17 @@
 export function routerConfig ($stateProvider, $urlRouterProvider) {
   'ngInject';
   $stateProvider
+    .state('board', {
+      url: '/boards/:board_id',
+      templateUrl: 'app/boards/board.html',
+      controller: 'BoardController',
+      controllerAs: 'bd'
+    })
     .state('boards', {
       url: '/boards',
-      templateUrl: 'app/components/boards/boards.html',
+      templateUrl: 'app/boards/boards.html',
       controller: 'BoardsController',
-      controllerAs: 'boards'
+      controllerAs: 'bds'
     })
     .state('home', {
       url: '/',
