@@ -9,6 +9,8 @@ var browserSyncSpa = require('browser-sync-spa');
 
 var util = require('util');
 
+var exec = require('child_process').exec;
+
 var proxyMiddleware = require('http-proxy-middleware');
 
 function browserSyncInit(baseDir, browser) {
@@ -23,7 +25,10 @@ function browserSyncInit(baseDir, browser) {
 
   var server = {
     baseDir: baseDir,
-    routes: routes
+    routes: routes,
+    middleware: [
+      proxyMiddleware('/api', { target: 'http://localhost:3000' })
+    ]
   };
 
   /*
