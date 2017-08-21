@@ -13,20 +13,14 @@ Things you may want to cover:
     bower  
 
 * Configuration  
-    ```
-    cd client
-    nom install
-    bower install
-    ```
-* Database creation  
-    ```ruby
-    rake db:create  
-    rake db:schema:load
-    ```  
-  
-
+```
+bundle install
+rake db:setup
+cd client
+nom install
+bower install
+```
 * Starting the application
-    ```ruby
-    rails s # main app directory
-    gulp serve # client directory
-    ```
+```ruby
+gulp serve:full-stack # client directory
+```
