@@ -1,12 +1,19 @@
 <div class="panel panel-default">
     <div class="panel-header">
-      <span>{{cl.model.name}}</span>
+      <span ng-hide="isEditing">{{model.name}}</span>
+      <input ng-show="isEditing" ng-model='model.name' type="text"/>
     </div>
 
     <div class="panel-body">
-      <pre> Some description of the task would go in here</pre>
+      <!--<pre ng-hide="isEditing">{{model.description}}</pre>-->
+      <textarea ng-disabled='!isEditing' ng-model="model.description" rows="5" class="form-control"/>
     </div>
     <div class="panel-footer">
-      <button class="btn btn-danger" ng-click="cl.destroy()">Delete</button>
+      <button class="btn btn-danger" ng-click="tsk.destroy()">Delete</button>
+      <button ng-show="isEditing" class="btn btn-primary" ng-click="tsk.update()">Save</button>
+      <!-- Button trigger modal -->
+      <button type="button" ng-hide="isEditing" class="btn btn-primary" ng-click="tsk.edit()">
+        Edit
+      </button>
     </div>
 </div>

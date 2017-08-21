@@ -1,15 +1,18 @@
 <div class="col-md-2 panel panel-default">
   <div class="panel-heading">
-    <span>{{model.name}}</span>
-    <button class="btn btn-success" ng-click="cl.add_task()">Add a task</button>
+    <button ng-hide="isEditing" class="btn btn-success" ng-click="cl.add_task()">Add a task</button>
+    <button class="btn btn-danger" ng-click="cl.destroy()">Delete</button>
+    <button ng-show="isEditing" class="btn btn-primary" ng-click="cl.update()">Save</button>
+    <!-- Button trigger modal -->
+    <button type="button" ng-hide="isEditing" class="btn btn-primary" ng-click="cl.edit()">
+      Edit
+    </button>
+    <div ng-hide="isEditing">{{model.name}}</div>
+    <input ng-show="isEditing" ng-model="model.name"/>
   </div>
   <div class="panel-body">
     <div ng-repeat="task in model.tasks">
       <task-component model="task"></task-component>
     </div>
-  </div>
-
-  <div class="panel-footer">
-    <button class="btn btn-danger" ng-click="cl.destroy()">Delete</button>
   </div>
 </div>
