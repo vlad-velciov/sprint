@@ -1,4 +1,4 @@
-# README
+# SPRINT
 
 This is a demo application using angular 1.5 and rails 5 api.
 
