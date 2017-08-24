@@ -18,9 +18,8 @@ bundle install
 rake db:setup
 cd client
 npm install
-npm start
 ```
 * Starting the application
 ```ruby
-gulp serve:full-stack # client directory
+npm start # client directory
 ```
