@@ -17,8 +17,8 @@ Things you may want to cover:
 bundle install
 rake db:setup
 cd client
-nom install
-bower install
+npm install
+npm start
 ```
 * Starting the application
 ```ruby
