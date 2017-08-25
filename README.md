@@ -17,10 +17,9 @@ Things you may want to cover:
 bundle install
 rake db:setup
 cd client
-nom install
-bower install
+npm install
 ```
 * Starting the application
 ```ruby
-gulp serve:full-stack # client directory
+npm start # client directory
 ```
